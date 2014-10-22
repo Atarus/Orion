@@ -15,6 +15,7 @@ public class LoadingScreen extends Screen {
 	public void update(float deltaTime) {
 		Graphics g = game.getGraphics();
 		Assets.Play = g.newImage("OrionPlay.png", ImageFormat.RGB565);
+		Assets.testship = g.newImage("working.jpg", ImageFormat.RGB565);
 		//This is how you would load a sound if you had one.
 		//Assets.click = game.getAudio().createSound("explode.ogg");
 

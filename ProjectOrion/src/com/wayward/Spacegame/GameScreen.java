@@ -19,7 +19,7 @@ public class GameScreen extends Screen {
 	}
 
 	GameState state = GameState.Ready;
-
+	PlayerShip player = new PlayerShip(Assets.testship, 100, 100);
 	// Variable Setup
 
 
@@ -35,6 +35,7 @@ public class GameScreen extends Screen {
 	@Override
 	public void update(float deltaTime) {
 		List<TouchEvent> touchEvents = game.getInput().getTouchEvents();
+		Graphics g = game.getGraphics();
 
 		// We have four separate update methods in this example.
 		// Depending on the state of the game, we call different update methods.
@@ -67,7 +68,15 @@ public class GameScreen extends Screen {
 		// This is identical to the update() method from our Unit 2/3 game.
 
 		// 1. All touch input is handled here:
-		
+		int len = touchEvents.size();
+		for (int i = 0; i < len; i++) {
+			TouchEvent event = touchEvents.get(i);
+			if (event.type == TouchEvent.TOUCH_DRAGGED) {
+
+					player.movetopos(event.x,event.y);
+
+			}
+		}
 
 		// 2. Check miscellaneous events like death:
 
@@ -127,9 +136,8 @@ public class GameScreen extends Screen {
 	@Override
 	public void paint(float deltaTime) {
 		Graphics g = game.getGraphics();
-
-		
-
+		g.clearScreen(0);
+		player.drawship(g);
 		// Example:
 		// g.drawImage(Assets.background, 0, 0);
 		// g.drawImage(Assets.character, characterX, characterY);

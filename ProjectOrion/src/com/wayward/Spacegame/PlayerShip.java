@@ -34,7 +34,8 @@ public class PlayerShip extends Ship {
 		
 	}
 	public void drawship(Graphics g){
-		g.drawScaledImage(sprite,x,y,(sprite.getHeight()*g.getHeight())/120,(sprite.getWidth()*g.getHeight())/120,1,1,1,1);
+		//g.drawScaledImage(sprite,x,y,(sprite.getHeight()*g.getHeight())/120,(sprite.getWidth()*g.getHeight())/120,1,1,1,1);
+		g.drawScaledImage(sprite,x,y,50,50,1,1,1,1);
 	}
 	public void update(int xtouched,int ytouched, Graphics g){
 		movetopos(xtouched,ytouched);

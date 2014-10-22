@@ -6,7 +6,7 @@ import com.wayward.framework.Sound;
 
 public class Assets {
 	
-	public static Image Splash, Play;
+	public static Image Splash, Play, testship;
 	//public static Sound click;
 	//public static Music theme;
 	
